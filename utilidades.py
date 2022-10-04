@@ -49,7 +49,6 @@ def bienvenida():
             Delete-Join:
         23. Como hacer un delete-join
 
-
     """)
 
 def stay(txt: str):
@@ -67,11 +66,3 @@ def limpiarConsola():
     if sistema == "Windows":
         os.system("cls")
 
-
-
-
-def crearBaseDatos():
-    print("CREATE DATABASE 'nombreBaseDeDatos';")
-
-def dropDatabase():
-    print("DROP DATABASE 'nombreBaseDeDatos'")

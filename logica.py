@@ -1,12 +1,18 @@
 import utilidades as utils
+import comandosSql as comandosql
 
-funcionesUtilidades = ["",lambda: utils.crearBaseDatos(),lambda: utils.dropDatabase()]
+funcionesUtilidades = ["",lambda: comandosql.crearBaseDatos(),lambda: comandosql.dropDatabase()]
 
-def funcionParaLlamar (numero):
+def numeroValido(numero): #Comprobamos si el numero es valido
     numero = int(numero)
-    if numero == 0:
-        exit()
-    if numero >= len(funcionesUtilidades):
-        print("Error01: Ese numero es muy grande")
+    if numero == 0 or numero >= len(funcionesUtilidades):
+        return False
+    elif numero <=len(funcionesUtilidades):
+        return True
+
+def funcionParaLlamar (numeroUsuario):
+    if(numeroValido(numeroUsuario)):
+        return funcionesUtilidades[numeroUsuario]()
     else:
-        return funcionesUtilidades[numero]()
+        print("ERR:01, ese numero no es valido")
+        exit()
